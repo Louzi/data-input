@@ -1,0 +1,40 @@
+{
+  "dataRoles": [
+    { "name": "category", "kind": "Grouping", "displayName": "Category" },
+    { "name": "value", "kind": "Measure", "displayName": "Value" },
+    { "name": "average", "kind": "Measure", "displayName": "Average" }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "for": { "in": "category" }
+        },
+        "values": {
+          "select": [
+            { "bind": { "to": "value" } },
+            { "bind": { "to": "average" } }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "settings": {
+      "displayName": "Settings",
+      "properties": {
+        "chartType": {
+          "displayName": "Chart Type",
+          "type": {
+            "enumeration": [
+              { "value": "Pie", "displayName": "Pie Chart" },
+              { "value": "Bar", "displayName": "Bar Chart" },
+              { "value": "Line", "displayName": "Line Chart" }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "privileges": []
+}
